@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { BiUpArrow } from 'react-icons/bi';
 
 export const MainLayout = ({ children }) => {
   // State
