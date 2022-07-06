@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /* next.config.js  */
 module.exports = {
   i18n: {

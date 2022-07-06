@@ -34,7 +34,7 @@
     "classnames": "^2.2.6",
     "i18next": "^20.1.0",
     "i18next-browser-languagedetector": "^6.1.0",
-    "next": "^11.1.0",
+    "next": "12",
     "next-seo": "^5.4.0",
     "next-sitemap": "^2.5.20",
     "numeral": "^2.0.6",

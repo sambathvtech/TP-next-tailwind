@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 const colors = require('tailwindcss/colors');
 
 module.exports = {
