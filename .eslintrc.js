@@ -32,7 +32,7 @@ module.exports = {
   ],
 
   rules: {
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Use our .prettierrc file as source
+    'prettier/prettier': ['error', { endOfLine: 'auto' }, { usePrettierrc: true }], // Use our .prettierrc file as source
     'import/prefer-default-export': 'off',
     'react/jsx-filename-extension': 'off',
     'no-console': [

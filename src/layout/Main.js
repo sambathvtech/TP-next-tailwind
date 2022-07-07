@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BiUpArrow } from 'react-icons/bi';
+import Main from '../components/Main';
 
 export const MainLayout = ({ children }) => {
   // State
@@ -17,21 +17,7 @@ export const MainLayout = ({ children }) => {
 
   return (
     <div className='w-full relative bg-black'>
-      {scrollBtn && (
-        <button
-          type='button'
-          className='fixed bottom-10 right-10 flex justify-center items-center w-10 h-10 bg-white rounded-lg'
-          onClick={() =>
-            window.scrollTo({
-              top: 0,
-              left: 0,
-              behavior: 'smooth',
-            })
-          }
-        >
-          <BiUpArrow />
-        </button>
-      )}
+      <Main.ScrollToTop scrollBtn={scrollBtn} />
       <div>{children}</div>
     </div>
   );

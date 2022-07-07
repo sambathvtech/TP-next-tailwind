@@ -1,15 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
-import { nextSeo } from '../../utilities/nextSeo';
 import { getDomain } from '../../utilities/dev';
+import GATag from './GATag';
 
-export default function HeadNextSeo() {
-  const { seo, linkTo } = nextSeo();
-
+export default function HeadNextSeo({ dataSource }) {
+  const { seo, linkTo } = dataSource;
   return (
     <div>
       <Head>
+        <GATag />
+
         <link
           href='https://fonts.googleapis.com/css2?family=Inter&display=optional'
           rel='stylesheet'
@@ -30,7 +31,7 @@ export default function HeadNextSeo() {
         <meta name='AdsBot-Google' content='noindex' />
       </Head>
       <NextSeo
-        title={seo?.title}
+        title={seo?.title !== '' ? seo?.title : 'A title of page'}
         description={seo?.description !== '' ? seo?.description : 'A short description goes here.'}
         canonical={`${getDomain()}${linkTo}`}
         openGraph={{
