@@ -1,4 +1,4 @@
 export const isDebug = () => process?.env?.NODE_ENV === 'development';
 
 export const getDomain = () =>
-  isDebug() ? 'http://localhost:3000' : 'https://test-cash141.vercel.app/';
+  isDebug() ? 'http://localhost:3000' : process?.env?.NEXT_PUBLIC_API_URL;
