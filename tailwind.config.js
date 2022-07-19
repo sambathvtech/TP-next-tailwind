@@ -7,20 +7,10 @@ module.exports = {
     extend: {
       colors: { ...colors },
       height: {
-        'px-800': '800px',
-        'px-500': '500px',
-        'px-5': '5px',
+        inherit: 'inherit',
       },
       width: {
-        'px-800': '800px',
-        'px-500': '500px',
-        'px-5': '5px',
-      },
-      inset: {
-        'px-1': '1px',
-      },
-      borderWidth: {
-        'px-1': '1px',
+        inherit: 'inherit',
       },
     },
   },

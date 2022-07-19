@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Main from '../components/Main';
+import { Main } from '../components';
 
 export const MainLayout = ({ children }) => {
   // State
