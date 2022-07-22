@@ -35,8 +35,18 @@ module.exports = {
     'prettier/prettier': ['error', { endOfLine: 'auto' }, { usePrettierrc: true }], // Use our .prettierrc file as source
     'import/prefer-default-export': 'off',
     'react/jsx-filename-extension': 'off',
+    'jsx-a11y/alt-text': [
+      2,
+      {
+        elements: ['img', 'object', 'area', 'input[type="image"]'],
+        img: ['Image'],
+        object: ['Object'],
+        area: ['Area'],
+        'input[type="image"]': ['InputImage'],
+      },
+    ],
     'no-console': [
-      'error',
+      'warn',
       {
         allow: ['warn', 'error'],
       },
