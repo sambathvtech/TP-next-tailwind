@@ -1,9 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-import { NextSeo } from 'next-seo';
+import { FAQPageJsonLd, NextSeo } from 'next-seo';
 import { getDomain } from '../../utilities/dev';
 import GATag from './GATag';
-import FbPixel from './FbPixel';
+import { fetchImage } from '../../service/strapi';
+import { asFaq } from '../../utilities/format';
+import { faqDefault } from '../../constants/seoData';
 
 export default function HeadNextSeo({ dataSource }) {
   const { seo, linkTo } = dataSource;
@@ -11,7 +13,6 @@ export default function HeadNextSeo({ dataSource }) {
     <div>
       <Head>
         <GATag />
-        <FbPixel />
 
         <link
           href='https://fonts.googleapis.com/css2?family=Inter&display=optional'
@@ -29,20 +30,29 @@ export default function HeadNextSeo({ dataSource }) {
         <meta name='msapplication-TileColor' content='#da532c' />
         <meta name='theme-color' content='#ffffff' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta name='robots' content='noindex' />
-        <meta name='AdsBot-Google' content='noindex' />
+        <meta name='keywords' content={seo?.keywords || ''} />
       </Head>
       <NextSeo
-        title={seo?.title !== '' ? seo?.title : 'A title of page'}
-        description={seo?.description !== '' ? seo?.description : 'A short description goes here.'}
+        title={seo?.title ? seo?.title.substring(0, 70) : 'A title of page'}
+        description={
+          seo?.description ? seo?.description.substring(0, 320) : 'A short description goes here.'
+        }
         canonical={`${getDomain()}${linkTo}`}
         openGraph={{
           url: `${getDomain()}${linkTo}`,
-          title: seo?.title,
-          description:
-            seo?.description !== '' ? seo?.description : 'A short description goes here.',
-          images: [{ url: `${getDomain()}/images/android-chrome-192x192.png` }],
-          site_name: 'wgfun',
+          title: seo?.title.substring(0, 70),
+          description: seo?.description
+            ? seo?.description.substring(0, 320)
+            : 'A short description goes here.',
+          images:
+            seo?.images?.length > 0
+              ? seo?.images?.map((load) => ({ url: fetchImage(load.url) }))
+              : [
+                  {
+                    url: `${getDomain()}/images/android-chrome-192x192.png`,
+                  },
+                ],
+          site_name: 'WG 匯遊會 娛樂城',
           type: 'website',
         }}
         twitter={{
@@ -51,6 +61,8 @@ export default function HeadNextSeo({ dataSource }) {
           cardType: 'summary_large_image',
         }}
       />
+
+      <FAQPageJsonLd mainEntity={seo?.faq?.length > 0 ? asFaq(seo?.faq) : faqDefault} />
     </div>
   );
 }
