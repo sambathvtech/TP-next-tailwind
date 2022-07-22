@@ -2,6 +2,8 @@ import React from 'react';
 import { RecoilRoot } from 'recoil';
 import '../utilities/i18n';
 import '../styles/globals.css';
+import { Main } from '../components';
+import { seoDefualt } from '../constants';
 
 const config = {
   enableRecoil: false,
@@ -12,6 +14,7 @@ function MyApp({ Component, pageProps }) {
 
   let appElem = (
     <Layout>
+      <Main.HeadNextSeo dataSource={pageProps?.seo || seoDefualt} />
       <Component {...pageProps} />
     </Layout>
   );

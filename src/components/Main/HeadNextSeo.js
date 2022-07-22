@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 import { getDomain } from '../../utilities/dev';
 import GATag from './GATag';
+import FbPixel from './FbPixel';
 
 export default function HeadNextSeo({ dataSource }) {
   const { seo, linkTo } = dataSource;
@@ -10,6 +11,7 @@ export default function HeadNextSeo({ dataSource }) {
     <div>
       <Head>
         <GATag />
+        <FbPixel />
 
         <link
           href='https://fonts.googleapis.com/css2?family=Inter&display=optional'

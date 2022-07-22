@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
-  siteUrl: 'https://reurl.cc/9GXmjj',
+  siteUrl: 'https://www.wgfun.club',
   generateRobotsTxt: true,
   sitemapSize: 7000,
   exclude: ['/sitemap-new.xml'],

@@ -1,4 +1,4 @@
-const Pixel = () => {
+const FbPixel = () => {
   const pixelId = process.env.NEXT_PUBLIC_FB_PIXEL;
 
   const pixelCode = `
@@ -31,4 +31,4 @@ const Pixel = () => {
   );
 };
 
-export default Pixel;
+export default FbPixel;
