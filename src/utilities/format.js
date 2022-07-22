@@ -8,3 +8,8 @@ export const asFaq = (arr) =>
     questionName: load.questionName,
     acceptedAnswerText: load.acceptedAnswerText,
   }));
+
+export const asSeo = (obj) => ({
+  linkTo: obj.linkTo,
+  seo: obj,
+});
