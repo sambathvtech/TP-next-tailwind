@@ -1,10 +1,15 @@
 /** @type {import('next-sitemap').IConfig} */
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_PROD_DOMAIN === undefined
+    ? 'https://www.wgfun.club'
+    : process.env.NEXT_PUBLIC_PROD_DOMAIN;
+
 module.exports = {
-  siteUrl: 'https://www.wgfun.club',
+  siteUrl,
   generateRobotsTxt: true,
   sitemapSize: 7000,
-  exclude: ['/sitemap-new.xml'],
+  exclude: ['/sitemap.xml'],
   robotsTxtOptions: {
     policies: [
       {
@@ -12,6 +17,6 @@ module.exports = {
         allow: '/',
       },
     ],
-    additionalSitemaps: ['https://www.wgfun.club/sitemap-new.xml'],
+    additionalSitemaps: [`${siteUrl}/sitemap.xml`],
   },
 };

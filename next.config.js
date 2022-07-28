@@ -1,12 +1,26 @@
 /* next.config.js  */
-module.exports = {
+const withPWA = require('next-pwa');
+
+const cmsPath =
+  process.env.NEXT_PUBLIC_CMS_URL === undefined
+    ? '/'
+    : process?.env?.NEXT_PUBLIC_CMS_URL.replace(/^https?:\/\//, '');
+
+module.exports = withPWA({
   i18n: {
     locales: ['en'],
     defaultLocale: 'en',
   },
   experimental: { esmExternals: true },
   images: {
-    domains: ['/'],
+    domains: [cmsPath],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
-};
+  pwa: {
+    dest: 'public',
+    disable: process.env.NODE_ENV === 'development',
+    register: true,
+    scope: '/app',
+    sw: 'service-worker.js',
+  },
+});
