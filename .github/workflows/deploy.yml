@@ -3,6 +3,8 @@ name: Deploy
 on:
   push:
     branches: [main]
+    
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -11,22 +13,14 @@ jobs:
       NODE_ENV: 'development'
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-      - name: Install dependencies
-        run: npm install
-      - name: Test & build
-        run: npm run build
 
       - name: Deploy with Vercel
         id: deploy
-        uses: amondnet/vercel-action@v20
+        uses: amondnet/vercel-action@v25.1.0
         with:
+          # scope: 'fishtank'
           vercel-args: ${{ ((github.event_name == 'push' && github.ref == 'refs/heads/main') && '--prod') || '' }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          scope: ${{ secrets.VERCEL_SCOPE }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
