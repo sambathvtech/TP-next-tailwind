@@ -15,7 +15,7 @@ export default function ScrollToTop({ scrollBtn }) {
           })
         }
       >
-        <BiUpArrow />
+        <BiUpArrow color='#000' />
       </button>
     )
   );

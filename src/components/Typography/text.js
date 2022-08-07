@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TextDefualt = ({ children, defualtStyles, className }) => {
+const TextDefualt = ({ children, defualtStyles = '', className = '' }) => {
   return <p className={`${defualtStyles} ${className}`}>{children}</p>;
 };
 

@@ -2,7 +2,7 @@
 const withPWA = require('next-pwa');
 
 const cmsPath =
-  process.env.NEXT_PUBLIC_CMS_URL === undefined
+  process?.env?.NEXT_PUBLIC_CMS_URL === undefined
     ? '/'
     : process?.env?.NEXT_PUBLIC_CMS_URL.replace(/^https?:\/\//, '');
 
