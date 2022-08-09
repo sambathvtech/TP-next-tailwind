@@ -52,7 +52,7 @@ export default function HeadNextSeo({ dataSource }) {
                     url: `${getDomain()}/images/android-chrome-192x192.png`,
                   },
                 ],
-          site_name: 'WG 匯遊會 娛樂城',
+          site_name: 'Name site',
           type: 'website',
         }}
         twitter={{
