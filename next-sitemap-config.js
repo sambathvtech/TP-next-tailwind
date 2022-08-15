@@ -2,7 +2,7 @@
 
 const siteUrl =
   process.env.NEXT_PUBLIC_PROD_DOMAIN === undefined
-    ? 'https://www.wgfun.club'
+    ? 'https://www.test.com'
     : process.env.NEXT_PUBLIC_PROD_DOMAIN;
 
 module.exports = {

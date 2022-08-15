@@ -9,7 +9,10 @@ export const asFaq = (arr) =>
     acceptedAnswerText: load.acceptedAnswerText,
   }));
 
-export const asSeo = (obj) => ({
-  linkTo: obj.linkTo,
-  seo: obj,
-});
+export const asSeo = (obj) =>
+  obj
+    ? {
+        linkTo: obj?.linkTo,
+        seo: obj,
+      }
+    : {};
