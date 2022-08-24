@@ -2,8 +2,8 @@ import React from 'react';
 import { RecoilRoot } from 'recoil';
 import '../utilities/i18n';
 import '../styles/globals.css';
-import { Main } from '../components';
-import { seoDefualt } from '../constants';
+import { Main } from '@components';
+import { seoDefualt } from '@constants';
 
 const config = {
   enableRecoil: false,

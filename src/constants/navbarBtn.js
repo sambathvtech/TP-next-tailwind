@@ -4,6 +4,6 @@ export const navbarBtnsData = [
     btnText: 'home',
     linkTo: '/',
     show: false,
-    childs: [],
+    children: [],
   },
 ];

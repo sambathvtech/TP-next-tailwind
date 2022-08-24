@@ -15,6 +15,12 @@ module.exports = {
     react: {
       version: 'detect', // Automatically detect the react version
     },
+    'import/resolver': {
+      jsconfig: {
+        config: 'jsconfig.json',
+        extensions: ['.js', '.jsx'],
+      },
+    },
   },
 
   env: {
