@@ -1,0 +1,86 @@
+@font-face {
+  font-family: georgia;
+  src: url('../fonts/georgia/Georgia.ttf');
+}
+
+@font-face {
+  font-family: georgia-bold;
+  src: url('../fonts/georgia/georgia\ bold.ttf');
+}
+
+.strapi-content h1 {
+  font-size: 38pt !important;
+  font-weight: bold;
+  clear: both;
+  font-family: georgia-bold, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.strapi-content h2 {
+  font-size: 36pt !important;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  clear: both;
+  font-family: georgia-bold, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.strapi-content h3 {
+  font-size: 32pt !important;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  clear: both;
+  font-family: georgia-bold, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.strapi-content h4 {
+  font-size: 28pt !important;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  clear: both;
+  font-family: georgia-bold, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.strapi-content h5 {
+  font-size: 24pt !important;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  clear: both;
+  font-family: georgia-bold, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.strapi-content h6 {
+  font-size: 18pt !important;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  clear: both;
+  font-family: georgia-bold, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.strapi-content p {
+  margin-bottom: 20px;
+  font-family: georgia, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.strapi-content a {
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.strapi-content a:hover {
+  opacity: 0.8;
+}
+
+.strapi-content li {
+  color: #bbb;
+}
