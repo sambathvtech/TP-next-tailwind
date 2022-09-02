@@ -1,3 +1,4 @@
+import { getCMSDomain } from '@utilities/dev';
 import { BsCheckCircleFill, BsFillRecordFill, BsFillXCircleFill } from 'react-icons/bs';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -99,13 +100,7 @@ export const RichTextMarkdown = ({ content }) => {
             classTag = 'mx-auto';
             src = props.src.replace('(center)', '');
           }
-          return (
-            <img
-              src={`https://seo-strapi.seo.hd1.fun${src}`}
-              alt={props.alt}
-              className={classTag}
-            />
-          );
+          return <img src={`${getCMSDomain()}${src}`} alt={props.alt} className={classTag} />;
         },
         br: () => {
           return <br clear='all' />;

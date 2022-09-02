@@ -12,6 +12,7 @@
       "@common/*": ["src/common/*"],
       "@layout/*": ["src/layout/*"],
       "@locales/*": ["src/locales/*"],
+      "@fonts/*": ["src/fonts/*"],
       "@model/*": ["src/model/*"],
       "@service/*": ["src/service/*"],
       "@styles/*": ["src/styles/*"],

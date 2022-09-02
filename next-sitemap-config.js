@@ -1,9 +1,9 @@
 /** @type {import('next-sitemap').IConfig} */
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_PROD_DOMAIN === undefined
+  process.env.NEXT_PUBLIC_API_URL === undefined
     ? 'https://www.test.com'
-    : process.env.NEXT_PUBLIC_PROD_DOMAIN;
+    : process.env.NEXT_PUBLIC_API_URL;
 
 module.exports = {
   siteUrl,

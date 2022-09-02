@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import { FAQPageJsonLd, NextSeo } from 'next-seo';
-import { getDomain } from '../../utilities/dev';
+import { getDomain } from '@utilities/dev';
+import { fetchImage } from '@service/strapi';
+import { asFaq } from '@utilities';
+import { faqDefault } from '@constants';
 import GATag from './GATag';
-import { fetchImage } from '../../service/strapi';
-import { asFaq } from '../../utilities/format';
-import { faqDefault } from '../../constants/seoData';
 
 export default function HeadNextSeo({ dataSource }) {
   const { seo, linkTo } = dataSource;

@@ -3,8 +3,8 @@ import { RecoilRoot } from 'recoil';
 import '../utilities/i18n';
 import '../styles/globals.css';
 import '../styles/strapi.css';
-import { Main } from '@components';
 import { seoDefualt } from '@constants';
+import { Main } from '@components/common';
 
 const config = {
   enableRecoil: false,

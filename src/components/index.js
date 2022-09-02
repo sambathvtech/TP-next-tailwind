@@ -1,5 +1,3 @@
-import Main from './Main';
-import Layout from './Layout';
-import Table from './Table';
+import Common from './common';
 
-export { Main, Layout, Table };
+export { Common };

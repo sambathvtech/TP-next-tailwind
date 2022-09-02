@@ -1,9 +1,8 @@
 export const navbarBtnsData = [
   // Element(show) is show element on button or not
   {
-    btnText: 'home',
+    text: 'home',
     linkTo: '/',
-    show: false,
     children: [],
   },
 ];

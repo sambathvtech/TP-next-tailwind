@@ -1,4 +1,4 @@
-import { Main } from '@components';
+import { Main } from '@components/common';
 import { useState, useEffect } from 'react';
 
 export const MainLayout = ({ children }) => {
