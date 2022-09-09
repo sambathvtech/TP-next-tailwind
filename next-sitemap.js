@@ -1,5 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 
+// run: 'next-sitemap';
+
 const siteUrl =
   process.env.NEXT_PUBLIC_API_URL === undefined
     ? 'https://www.test.com'
@@ -7,9 +9,10 @@ const siteUrl =
 
 module.exports = {
   siteUrl,
+  changefreq: 'daily',
+  priority: 0.7,
+  sitemapSize: 5000,
   generateRobotsTxt: true,
-  sitemapSize: 7000,
-  exclude: ['/sitemap.xml'],
   robotsTxtOptions: {
     policies: [
       {
@@ -17,6 +20,10 @@ module.exports = {
         allow: '/',
       },
     ],
-    additionalSitemaps: [`${siteUrl}/sitemap.xml`],
+    additionalSitemaps: [
+      `${siteUrl}/sitemap.xml`,
+      `${siteUrl}/sitemap-main.xml`,
+      `${siteUrl}/sitemap-blog.xml`,
+    ],
   },
 };
