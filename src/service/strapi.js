@@ -1,7 +1,7 @@
-import { getCMSDomain } from '../utilities/dev';
+import { getCMSDomain, getDomain } from '@utilities/dev';
 
 const convertObjectToString = (obj) => {
-  let newString = `?sites.domain=${process.env.NEXT_PUBLIC_API_URL || '/'}`; // ?sites.domain=${process.env.NEXT_PUBLIC_API_URL}
+  let newString = `?sites.domain=${getDomain()}`;
   const keys = Object.keys(obj);
   if (keys.length > 0) {
     keys.map((key) => {

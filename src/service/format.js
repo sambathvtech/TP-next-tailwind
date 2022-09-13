@@ -1,19 +1,46 @@
-import { getCMSDomain } from '@utilities/dev';
 import { BsCheckCircleFill, BsFillRecordFill, BsFillXCircleFill } from 'react-icons/bs';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 const textColor = (props) => {
+  let content = props.children ? props.children[0] : '';
+  content = typeof content === 'string' && content.replace('(frame)', '');
+  content = typeof content === 'string' && content.replace('(center)', '');
+  content = typeof content === 'string' && content.replace('(right)', '');
   const regExp = /\(([^)]+)\)/;
-  const condition = regExp.exec(props.children ? props.children[0] : '');
+  const condition = regExp.exec(content);
   const getClass = condition !== null ? `${condition[1]}` : 'white';
-  const text =
-    condition !== null ? props.children[0].replace(`(${condition[1]})`, '') : props.children;
+  const text = condition !== null ? content.replace(`(${condition[1]})`, '') : props.children;
   return {
     getClass,
     text,
     condition,
   };
+};
+
+const TextFrame = ({ children, data }) => {
+  const content = data.children ? data.children[0] : '';
+  const condition = content.includes('(frame)');
+  const alignCenter = content.includes('(center)');
+  const alignRight = content.includes('(right)');
+  let alignment = 'text-left';
+  if (alignCenter) {
+    alignment = 'text-center';
+  } else if (alignRight) {
+    alignment = 'text-right';
+  }
+
+  return condition ? (
+    <div className='px-[3px] py-[3px] my-2 clear-both bg-gradient-to-t from-golden-frame-2 to-golden-frame-1'>
+      <div
+        className={`p-2 bg-gradient-to-t from-golden-2 via-golden-2 to-golden-1 clear-both ${alignment}`}
+      >
+        {children}
+      </div>
+    </div>
+  ) : (
+    children
+  );
 };
 
 export const RichTextMarkdown = ({ content }) => {
@@ -100,7 +127,14 @@ export const RichTextMarkdown = ({ content }) => {
             classTag = 'mx-auto';
             src = props.src.replace('(center)', '');
           }
-          return <img src={`${getCMSDomain()}${src}`} alt={props.alt} className={classTag} />;
+          return (
+            <img
+              src={`https://seo-strapi.seo.hd1.fun${src}`}
+              alt={props.alt}
+              title={props.alt}
+              className={`${classTag} lazyload`}
+            />
+          );
         },
         br: () => {
           return <br clear='all' />;
@@ -119,27 +153,51 @@ export const RichTextMarkdown = ({ content }) => {
         },
         h1: ({ node, ...props }) => {
           const { getClass, text } = textColor(props);
-          return <h1 style={{ color: getClass }}>{text}</h1>;
+          return (
+            <TextFrame data={props}>
+              <h1 style={{ color: getClass }}>{text}</h1>
+            </TextFrame>
+          );
         },
         h2: ({ node, ...props }) => {
           const { getClass, text } = textColor(props);
-          return <h2 style={{ color: getClass }}>{text}</h2>;
+          return (
+            <TextFrame data={props}>
+              <h2 style={{ color: getClass }}>{text}</h2>
+            </TextFrame>
+          );
         },
         h3: ({ node, ...props }) => {
           const { getClass, text } = textColor(props);
-          return <h3 style={{ color: getClass }}>{text}</h3>;
+          return (
+            <TextFrame data={props}>
+              <h3 style={{ color: getClass }}>{text}</h3>
+            </TextFrame>
+          );
         },
         h4: ({ node, ...props }) => {
           const { getClass, text } = textColor(props);
-          return <h4 style={{ color: getClass }}>{text}</h4>;
+          return (
+            <TextFrame data={props}>
+              <h4 style={{ color: getClass }}>{text}</h4>
+            </TextFrame>
+          );
         },
         h5: ({ node, ...props }) => {
           const { getClass, text } = textColor(props);
-          return <h5 style={{ color: getClass }}>{text}</h5>;
+          return (
+            <TextFrame data={props}>
+              <h5 style={{ color: getClass }}>{text}</h5>
+            </TextFrame>
+          );
         },
         h6: ({ node, ...props }) => {
           const { getClass, text } = textColor(props);
-          return <h6 style={{ color: getClass }}>{text}</h6>;
+          return (
+            <TextFrame data={props}>
+              <h6 style={{ color: getClass }}>{text}</h6>
+            </TextFrame>
+          );
         },
       }}
     >
