@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "test": "yarn lint:js && yarn lint:css",
-    "postbuild": "next-sitemap --config next-sitemap-config.js",
     "lint:js": "eslint ./src --ignore-path ./.gitignore",
     "lint:js:fix": "yarn lint:js --fix",
     "lint:css": "yarn stylelint \"src/**/*.css\"",
