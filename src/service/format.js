@@ -1,3 +1,4 @@
+import { getCMSDomain } from '@utilities/dev';
 import { BsCheckCircleFill, BsFillRecordFill, BsFillXCircleFill } from 'react-icons/bs';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -129,7 +130,7 @@ export const RichTextMarkdown = ({ content }) => {
           }
           return (
             <img
-              src={`https://seo-strapi.seo.hd1.fun${src}`}
+              src={`${getCMSDomain()}${src}`}
               alt={props.alt}
               title={props.alt}
               className={`${classTag} lazyload`}
