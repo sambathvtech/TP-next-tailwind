@@ -2,6 +2,7 @@ import React from 'react';
 import { RecoilRoot } from 'recoil';
 import '../utilities/i18n';
 import '../styles/globals.css';
+import '../styles/main.css';
 import { seoDefualt } from '@constants';
 import { Main } from '@components/common';
 
