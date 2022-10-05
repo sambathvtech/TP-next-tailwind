@@ -4,8 +4,8 @@
 @tailwind utilities;
 
 @layer components {
-  .new-container {
-    @apply px-5 xl:px-0 w-full xl:w-4/5 2xl:w-[1000px] mx-auto;
+  .container {
+    @apply px-5 xl:px-0 w-full xl:w-4/5 max-w-[1200px] mx-auto;
   }
 }
 
