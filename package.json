@@ -29,6 +29,7 @@
     "stylelint-config-standard": "^22.0.0"
   },
   "dependencies": {
+    "@babel/helper-string-parser": "^7.19.4",
     "@react-icons/all-files": "^4.1.0",
     "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.7",
