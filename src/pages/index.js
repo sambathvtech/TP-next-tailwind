@@ -4,7 +4,7 @@ export default function Home() {
   const { t } = useTranslation();
   return (
     <div>
-      <div>{`Home, ${t('title')}`}</div>
+      <div className='p-4 pt-2'>{`Home, ${t('title')}`}</div>
     </div>
   );
 }
