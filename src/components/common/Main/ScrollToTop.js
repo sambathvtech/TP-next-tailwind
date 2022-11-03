@@ -6,7 +6,7 @@ export default function ScrollToTop({ scrollBtn }) {
     scrollBtn && (
       <button
         type='button'
-        className='fixed z-40 bottom-10 right-10 flex justify-center items-center w-10 h-10 bg-white rounded-lg drop-shadow-lg text-black'
+        className='fixed bottom-10 right-10 z-40 flex h-10 w-10 items-center justify-center rounded-lg bg-white text-black drop-shadow-lg'
         onClick={() =>
           window.scrollTo({
             top: 0,

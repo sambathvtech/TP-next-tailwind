@@ -32,9 +32,9 @@ const TextFrame = ({ children, data }) => {
   }
 
   return condition ? (
-    <div className='px-[3px] py-[3px] my-2 clear-both bg-gradient-to-t from-golden-frame-2 to-golden-frame-1'>
+    <div className='from-golden-frame-2 to-golden-frame-1 clear-both my-2 bg-gradient-to-t px-[3px] py-[3px]'>
       <div
-        className={`p-2 bg-gradient-to-t from-golden-2 via-golden-2 to-golden-1 clear-both ${alignment}`}
+        className={`from-golden-2 via-golden-2 to-golden-1 clear-both bg-gradient-to-t p-2 ${alignment}`}
       >
         {children}
       </div>
@@ -60,9 +60,9 @@ export const RichTextMarkdown = ({ content }) => {
                   if (checkTrue && !checkFalse) {
                     return (
                       <li key={load.props.children[0]}>
-                        <span className='pl-2 flex items-start'>
+                        <span className='flex items-start pl-2'>
                           <span className='w-[30px]'>
-                            <BsCheckCircleFill className='text-green-600 mt-1' />
+                            <BsCheckCircleFill className='mt-1 text-green-600' />
                           </span>
                           <span className='w-full'>
                             {load.props.children[0].replace('(true)', '')}
@@ -74,9 +74,9 @@ export const RichTextMarkdown = ({ content }) => {
                   if (!checkTrue && checkFalse) {
                     return (
                       <li key={load.props.children[0]}>
-                        <span className='pl-2 flex items-start'>
+                        <span className='flex items-start pl-2'>
                           <span className='w-[30px]'>
-                            <BsFillXCircleFill className='text-red-600 mt-1' />
+                            <BsFillXCircleFill className='mt-1 text-red-600' />
                           </span>
                           <span className='w-full'>
                             {load.props.children[0].replace('(true)', '')}
@@ -87,9 +87,9 @@ export const RichTextMarkdown = ({ content }) => {
                   }
                   return (
                     <li key={load.props.children[0]}>
-                      <span className='pl-2 flex items-start'>
+                      <span className='flex items-start pl-2'>
                         <span className='w-[30px]'>
-                          <BsFillRecordFill className='text-white mt-1' />
+                          <BsFillRecordFill className='mt-1 text-white' />
                         </span>
                         <span className='w-full'>
                           {load.props.children[0].replace('(true)', '')}

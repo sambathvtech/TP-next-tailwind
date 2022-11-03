@@ -16,7 +16,7 @@ export const MainLayout = ({ children }) => {
   }, []);
 
   return (
-    <div className='w-full relative bg-black'>
+    <div className='relative w-full bg-black'>
       <Main.ScrollToTop scrollBtn={scrollBtn} />
       <div>{children}</div>
     </div>
