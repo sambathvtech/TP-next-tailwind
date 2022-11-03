@@ -10,7 +10,8 @@
     "lint:js": "eslint ./src --ignore-path ./.gitignore",
     "lint:js:fix": "yarn lint:js --fix",
     "lint:css": "yarn stylelint \"src/**/*.css\"",
-    "lint:css:fix": "yarn lint:css --fix"
+    "lint:css:fix": "yarn lint:css --fix",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -22,7 +23,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": ">=4",
+    "husky": "^8.0.0",
     "lint-staged": ">=10",
     "prettier": "^2.2.1",
     "stylelint": "^13.9.0",
