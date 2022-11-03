@@ -1,4 +1,3 @@
-const colors = require('tailwindcss/colors');
 const lineClamp = require('@tailwindcss/line-clamp');
 const daisyui = require('daisyui');
 
@@ -7,7 +6,6 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      colors: { ...colors },
       height: {
         inherit: 'inherit',
       },
@@ -25,6 +23,6 @@ module.exports = {
     logs: true,
     rtl: false,
     prefix: '',
-    darkTheme: 'dark',
+    darkTheme: 'light',
   },
 };
