@@ -137,6 +137,7 @@ export const RichTextMarkdown = ({ content }) => {
             />
           );
         },
+        // eslint-disable-next-line react/display-name
         br: () => {
           return <br clear='all' />;
         },

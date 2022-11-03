@@ -11,13 +11,14 @@ const config = {
 };
 
 function MyApp({ Component, pageProps }) {
-  const Layout = Component.Layout ? Component.Layout : React.Fragment;
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page) => page);
 
-  let appElem = (
-    <Layout>
+  let appElem = getLayout(
+    <>
       <Main.HeadNextSeo dataSource={pageProps?.seo || seoDefualt} />
       <Component {...pageProps} />
-    </Layout>
+    </>
   );
 
   if (config.enableRecoil) {

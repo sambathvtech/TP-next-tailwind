@@ -11,7 +11,10 @@ module.exports = withPWA({
     locales: ['en'],
     defaultLocale: 'en',
   },
-  experimental: { esmExternals: true },
+  experimental: {
+    esmExternals: true,
+    fontLoaders: [{ loader: '@next/font/google', options: { subsets: ['latin'] } }],
+  },
   images: {
     domains: [cmsPath],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],

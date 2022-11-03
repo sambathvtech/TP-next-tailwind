@@ -5,11 +5,6 @@ export default function Home() {
   return (
     <div>
       <div>{`Home, ${t('title')}`}</div>
-      <div>
-        <a href='/?lng=zh'>View zh-lang</a>
-        <br />
-        <a href='/?lng=en'>View en-lang</a>
-      </div>
     </div>
   );
 }

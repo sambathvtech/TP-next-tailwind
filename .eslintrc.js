@@ -35,11 +35,13 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'airbnb',
     'plugin:prettier/recommended', // Make this the last element so prettier config overrides other formatting rules
+    'next',
   ],
 
   rules: {
     'prettier/prettier': ['error', { endOfLine: 'auto' }, { usePrettierrc: true }], // Use our .prettierrc file as source
     'import/prefer-default-export': 'off',
+    'import/no-anonymous-default-export': [2, { allowObject: true }],
     'react/jsx-filename-extension': 'off',
     'jsx-a11y/alt-text': [
       2,
@@ -59,6 +61,7 @@ module.exports = {
     ],
     'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
+    '@next/next/no-img-element': 'off',
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/media-has-caption': 'off',
     'jsx-a11y/anchor-is-valid': [
